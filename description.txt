@@ -1,0 +1,59 @@
+import smtplib, ssl
+-- python modules for sending emails
+
+port = 465
+-- smtplib server port
+
+smtp_server = "smtp.gmail.com"
+--smtp server to connect
+
+sender_email = "lcpmatthew@gmail.com"
+receiver = "lcpmatthew@gmail.com"
+-- my email, used to both send and receive email
+
+password = open('password.txt', 'r').read()
+-- my account password, saved in another document
+
+message= f'''\
+From: {sender_email}
+To: {receiver}
+Subject: Test
+
+This is a spamming email sent by myself with python3
+'''
+-- message to be sent
+
+if __name__ == '__main__':
+--actions to bbe run after pressing the enter key on the keyboard
+
+
+	context= ssl.create_default_context()
+	-- create a ssl context, used for security
+
+	with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+	--create an email server
+		
+		server.login(sender_email, password)
+		-- logs in to my email
+
+		i = 0
+		-- create a variable which counts how many emails are sent
+
+		while True:
+		--loops until I end the program with control+c
+
+		
+			i += 1
+			--counts how many emails are sent
+
+			server.sendmail(sender_email, receiver, message)
+			--smtplib function to send an email
+
+			print(f'{i} Email(s) sent')
+			--tell the user the amount of emails sent
+
+
+
+Prerequisites:
+Gmail account safety is set to low,
+Python 3.5
