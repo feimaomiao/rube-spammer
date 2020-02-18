@@ -1,4 +1,4 @@
-import smtplib, ssl
+import smtplib, ssl, os, time
 -- python modules for sending emails
 
 port = 465
@@ -25,6 +25,12 @@ This is a spamming email sent by myself with python3
 
 if __name__ == '__main__':
 --actions to bbe run after pressing the enter key on the keyboard
+	
+	os.system('say sending emails')
+	-- tell the computer to actually pronounce the words
+
+	time.sleep(2)
+	--2 seconds is estimated as the time to walk from the computer to the slide
 
 
 	context= ssl.create_default_context()
