@@ -1,4 +1,4 @@
-import smtplib, ssl, os, time
+import smtplib, ssl, os
 """
 http://bit.ly/thrashergfr
 Created by Matthew Lam

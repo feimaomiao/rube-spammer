@@ -1,4 +1,4 @@
-import smtplib, ssl, os, time
+import smtplib, ssl, os
 -- python modules for sending emails
 
 port = 465
