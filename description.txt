@@ -24,7 +24,7 @@ This is a spamming email sent by myself with python3
 -- message to be sent
 
 if __name__ == '__main__':
---actions to bbe run after pressing the enter key on the keyboard
+--actions to be run after pressing the enter key on the keyboard
 	
 	os.system('say sending emails')
 	-- tell the computer to actually pronounce the words
