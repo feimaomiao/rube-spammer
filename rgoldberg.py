@@ -12,17 +12,20 @@ password = open('password.txt', 'r').read()
 message= f'''\
 From: {sender_email}
 To: {receiver}
-Subject: Test
+Subject: Rube Goldberg Project
 
+I need you to move
 This is a spamming email sent by myself with python3
 '''
 
 if __name__ == '__main__':
 	os.system('say sending emails')
-	time.sleep(2)
+	print('Creating ssl context')
 	context= ssl.create_default_context()
 	with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+		print('Created smtp server')
 		server.login(sender_email, password)
+		print('Logged in as lcpmatthew@gmail.com')
 		i = 0
 		try:
 			while True:

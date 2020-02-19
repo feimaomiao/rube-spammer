@@ -29,9 +29,8 @@ if __name__ == '__main__':
 	os.system('say sending emails')
 	-- tell the computer to actually pronounce the words
 
-	time.sleep(2)
-	--2 seconds is estimated as the time to walk from the computer to the slide
-
+	print('Creating ssl context')
+	--prints this line on the page
 
 	context= ssl.create_default_context()
 	-- create a ssl context, used for security
@@ -39,8 +38,14 @@ if __name__ == '__main__':
 	with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
 	--create an email server
 		
+		print('Created smtp server')
+		--prints this line on the page
+
 		server.login(sender_email, password)
 		-- logs in to my email
+
+		print('Logged in as lcpmatthew@gmail.com')
+		-- tells me I have logged in
 
 		i = 0
 		-- create a variable which counts how many emails are sent
